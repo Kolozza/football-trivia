@@ -29,23 +29,37 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
+      gap: 12px;
+      margin-bottom: 16px;
     }
 
     /* Avatar de Ray */
     .ray-avatar {
-      width: 42px;
-      height: 42px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid #ffe066;
-      box-shadow: 0 0 14px rgba(0, 0, 0, 0.7);
+      border: 3px solid #ffe066;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.9), 0 0 18px rgba(200, 16, 46, 0.8);
       flex-shrink: 0;
       background: #111;
     }
 
-    /* Si aún no hay foto de Ray, puedes dejar este div en lugar del <img> */
+    .ray-avatar-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .ray-caption {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.85;
+    }
+
+    /* Badge alternativo si no hay foto */
     .logo-badge {
       width: 42px;
       height: 42px;
@@ -403,14 +417,11 @@
 
   <div class="quiz-wrapper">
     <div class="logo">
-      <!-- OPCIÓN 1: usar foto real de Ray (recomendado) -->
-      <!-- Sube un archivo ray.jpg al repositorio y este <img> lo mostrará -->
-      <img src="ray.jpg" alt="Ray" class="ray-avatar" />
-
-      <!-- OPCIÓN 2 (backup): si no tienes foto, comenta la línea de arriba y descomenta esto
-      <div class="logo-badge">Ray</div>
-      -->
-
+      <div class="ray-avatar-wrapper">
+        <!-- Asegúrate de tener ray.jpg en el mismo repo -->
+        <img src="ray.jpg" alt="Ray" class="ray-avatar" />
+        <div class="ray-caption">Ray · Juez supremo del fútbol</div>
+      </div>
       <div>
         <div class="logo-text-main">RAY's Football Trivia</div>
         <div class="logo-text-sub">Liverpool Edition · Sólo apto para gente seria</div>
