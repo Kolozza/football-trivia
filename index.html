@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Football Quiz: Liverpool Edition</title>
+  <title>RAY's Football Trivia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
   <style>
@@ -14,7 +14,7 @@
     }
 
     body {
-      background: radial-gradient(circle at top, #ff4b4b 0, #111 55%, #050505 100%);
+      background: radial-gradient(circle at top, #b30000 0, #05070a 55%, #020308 100%);
       color: #fff;
       padding: 12px 10px 20px;
       overflow-x: hidden;
@@ -29,23 +29,37 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       margin-bottom: 10px;
     }
 
+    /* Avatar de Ray */
+    .ray-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ffe066;
+      box-shadow: 0 0 14px rgba(0, 0, 0, 0.7);
+      flex-shrink: 0;
+      background: #111;
+    }
+
+    /* Si aún no hay foto de Ray, puedes dejar este div en lugar del <img> */
     .logo-badge {
-      width: 38px;
-      height: 38px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       border: 2px solid #ffe066;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 14px;
-      background: linear-gradient(145deg, #b30000, #ff1f1f);
-      box-shadow: 0 0 12px rgba(255, 0, 0, 0.7);
+      font-size: 13px;
+      background: linear-gradient(145deg, #7a0016, #c8102e);
+      box-shadow: 0 0 16px rgba(200, 16, 46, 0.8);
       flex-shrink: 0;
+      text-transform: uppercase;
     }
 
     .logo-text-main {
@@ -58,15 +72,15 @@
     .logo-text-sub {
       font-size: 11px;
       text-transform: uppercase;
-      opacity: 0.75;
+      opacity: 0.8;
     }
 
     .quiz-card {
-      background: rgba(10, 10, 10, 0.9);
+      background: rgba(5, 7, 12, 0.96);
       border-radius: 18px;
       padding: 14px 14px 16px;
       box-shadow:
-        0 18px 40px rgba(0, 0, 0, 0.7),
+        0 18px 40px rgba(0, 0, 0, 0.9),
         0 0 0 1px rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.06);
       position: relative;
@@ -88,7 +102,7 @@
           transparent 1px
         );
       background-size: 22px 22px;
-      opacity: 0.05;
+      opacity: 0.035;
       pointer-events: none;
     }
 
@@ -114,18 +128,19 @@
       font-size: 11px;
       padding: 3px 8px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       text-transform: uppercase;
       letter-spacing: 0.03em;
-      opacity: 0.85;
+      opacity: 0.9;
       white-space: nowrap;
+      background: rgba(5, 7, 12, 0.8);
     }
 
     .progress-bar {
       width: 100%;
       height: 7px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.1);
       overflow: hidden;
       margin-bottom: 10px;
     }
@@ -134,7 +149,7 @@
       height: 100%;
       width: 0%;
       border-radius: inherit;
-      background: linear-gradient(90deg, #ffe066, #ff3333);
+      background: linear-gradient(90deg, #ffe066, #c8102e);
       transition: width 0.25s ease-out;
     }
 
@@ -149,10 +164,10 @@
     }
 
     .question-box {
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.55);
       border-radius: 14px;
       padding: 11px 11px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       margin-bottom: 12px;
     }
 
@@ -181,9 +196,9 @@
       width: 100%;
       text-align: left;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       padding: 10px 12px;
-      background: rgba(15, 15, 15, 0.95);
+      background: rgba(14, 16, 22, 0.98);
       color: #f5f5f5;
       font-size: 14px;
       display: flex;
@@ -203,11 +218,11 @@
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
       flex-shrink: 0;
     }
 
@@ -218,8 +233,8 @@
 
     .option-btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
-      border-color: rgba(255, 255, 255, 0.28);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+      border-color: rgba(255, 255, 255, 0.3);
     }
 
     .option-btn:disabled {
@@ -231,18 +246,18 @@
 
     .option-btn.selected {
       border-color: #ffe066;
-      background: linear-gradient(120deg, rgba(255, 255, 255, 0.08), rgba(255, 0, 0, 0.32));
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.06), rgba(200, 16, 46, 0.36));
       box-shadow: 0 0 0 1px rgba(255, 224, 102, 0.25);
     }
 
     .option-btn.correct {
       border-color: #8be46c;
-      background: linear-gradient(120deg, rgba(139, 228, 108, 0.08), rgba(12, 97, 0, 0.7));
+      background: linear-gradient(120deg, rgba(139, 228, 108, 0.1), rgba(17, 105, 0, 0.8));
     }
 
     .option-btn.wrong {
       border-color: #ff7b7b;
-      background: linear-gradient(120deg, rgba(255, 123, 123, 0.08), rgba(140, 0, 0, 0.7));
+      background: linear-gradient(120deg, rgba(255, 123, 123, 0.1), rgba(140, 0, 0, 0.85));
     }
 
     .feedback {
@@ -252,14 +267,14 @@
       margin-bottom: 12px;
       padding: 8px 10px;
       border-radius: 12px;
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px dashed rgba(255, 255, 255, 0.14);
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px dashed rgba(255, 255, 255, 0.2);
       display: flex;
       align-items: center;
     }
 
     .feedback span {
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     .footer-row {
@@ -278,10 +293,10 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      background: linear-gradient(135deg, #ffe066, #ff3b3b);
+      background: linear-gradient(135deg, #ffe066, #c8102e);
       color: #000;
       cursor: pointer;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.9);
     }
 
     #nextBtn:disabled {
@@ -294,7 +309,7 @@
 
     #nextBtn:not(:disabled):active {
       transform: translateY(1px) scale(0.99);
-      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.9);
       filter: brightness(0.95);
     }
 
@@ -302,7 +317,7 @@
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      opacity: 0.6;
+      opacity: 0.65;
       text-align: right;
       max-width: 120px;
     }
@@ -347,6 +362,7 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       margin-bottom: 10px;
+      background: rgba(14, 16, 22, 0.9);
     }
 
     #playAgainBtn {
@@ -357,7 +373,7 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      background: rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.15);
       color: #fff;
       cursor: pointer;
       width: 100%;
@@ -387,18 +403,25 @@
 
   <div class="quiz-wrapper">
     <div class="logo">
-      <div class="logo-badge">LFC</div>
+      <!-- OPCIÓN 1: usar foto real de Ray (recomendado) -->
+      <!-- Sube un archivo ray.jpg al repositorio y este <img> lo mostrará -->
+      <img src="ray.jpg" alt="Ray" class="ray-avatar" />
+
+      <!-- OPCIÓN 2 (backup): si no tienes foto, comenta la línea de arriba y descomenta esto
+      <div class="logo-badge">Ray</div>
+      -->
+
       <div>
-        <div class="logo-text-main">Football Quiz Game</div>
-        <div class="logo-text-sub">Edición: Sólo Entendidos</div>
+        <div class="logo-text-main">RAY's Football Trivia</div>
+        <div class="logo-text-sub">Liverpool Edition · Sólo apto para gente seria</div>
       </div>
     </div>
 
     <div class="quiz-card" id="quizCard">
       <div class="quiz-inner" id="quizInner">
         <div class="quiz-header">
-          <div class="quiz-title">¿Cuánto sabes de fútbol (de verdad)?</div>
-          <div class="tag" id="difficultyTag">Modo: Fan Experto</div>
+          <div class="quiz-title">¿Cuánto sabes de fútbol según Ray?</div>
+          <div class="tag" id="difficultyTag">Modo: Realidad Liverpool</div>
         </div>
 
         <div class="progress-bar">
@@ -420,13 +443,13 @@
         </div>
 
         <div class="feedback" id="feedback">
-          <span>Elige una opción para demostrar si ves fútbol... o resúmenes de TikTok.</span>
+          <span>Elige una opción para demostrar si sabes de fútbol… o si Ray te va a tirar del grupo.</span>
         </div>
 
         <div class="footer-row">
           <button id="nextBtn" disabled>Siguiente</button>
           <div class="footer-note">
-            Respuesta oficial avalada por la ciencia futbolística.
+            Criterio oficial de Ray y del universo.
           </div>
         </div>
       </div>
@@ -445,73 +468,75 @@
     // Datos del quiz
     var questions = [
       {
-        text: "¿Cuál es el mejor equipo de fútbol del mundo, históricamente, moralmente y según cualquier persona con criterio?",
-        options: ["Real Madrid", "FC Barcelona", "Manchester City", "Liverpool"],
-        correctIndex: 3
+        text: "En la temporada 2018-2019 de la Premier League, un equipo hizo 97 puntos y aun así no ganó el título. Según Ray (y cualquier persona seria), ¿qué equipo fue realmente el más dominante de esa temporada?",
+        options: ["Manchester City", "Liverpool", "Chelsea", "Tottenham"],
+        correctIndex: 1
       },
       {
-        text: "Según la única versión de la historia que importa, ¿qué equipo fue realmente el mejor del año 2021?",
+        text: "Año 2021. Algunos dicen que otro club estuvo mejor. Pero en la mente de Ray (y en la realidad paralela correcta) el mejor equipo fue:",
         options: ["Bayern de Múnich", "Chelsea", "Liverpool", "PSG"],
         correctIndex: 2
       },
       {
-        text: "En términos de ambiente, himno y piel de gallina por metro cuadrado, ¿qué club tiene el estadio más impresionante?",
+        text: "Ambiente, himno y piel de gallina: si no respondes esto bien, Ray te quita el carnet de futbolero.",
         options: ["Santiago Bernabéu", "Camp Nou", "Anfield (Liverpool)", "Old Trafford"],
         correctIndex: 2
       },
       {
-        text: "Imagina una final soñada de Champions. ¿Qué equipo tiene la obligación moral de ganarla sí o sí?",
+        text: "Final soñada de Champions. El universo necesita que gane:",
         options: ["Manchester City", "Liverpool", "Juventus", "Real Madrid"],
         correctIndex: 1
       },
       {
-        text: "En el universo donde el fútbol es justo, ¿qué equipo debería ganar automáticamente cualquier tanda de penaltis?",
+        text: "Tanda de penaltis en un mundo justo. ¿Quién debería llevársela siempre por decreto divino?",
         options: ["Italia", "Argentina", "Liverpool", "España"],
         correctIndex: 2
       },
       {
-        text: "¿Qué equipo fue objetivamente el más dominante del fútbol inglés cada vez que el árbitro no iba en su contra?",
+        text: "En la Premier, cada vez que el árbitro no va borracho de poder, el equipo realmente dominante es:",
         options: ["Arsenal de los Invincibles", "Manchester United de Ferguson", "Liverpool", "Leicester campeón"],
         correctIndex: 2
       },
       {
-        text: "¿Qué equipo debería salir como respuesta correcta en cualquier discusión de ‘mejor once de la historia’?",
+        text: "Debate de ‘mejor once de la historia’. La respuesta seria, sin shows ni humo, es:",
         options: ["Una mezcla de todos", "El que tenga más dinero", "La selección de Brasil del 70", "Liverpool"],
         correctIndex: 3
       },
       {
-        text: "En la liga española, si existiera un invitado especial superior a todos que ganara por decreto, ¿qué club sería?",
+        text: "Liga española. Si invitas a un club superior para que gane por encima de todos sólo por respeto futbolístico, llamas a:",
         options: ["Real Madrid", "FC Barcelona", "Atlético de Madrid", "Liverpool"],
         correctIndex: 3
       },
       {
-        text: "¿Qué escudo es tan grande que, si lo dibujas en la pizarra, ya vas ganando 1-0?",
+        text: "Dibujas este escudo en la pizarra del vestuario y el partido ya va 1-0 sólo por presencia.",
         options: ["Real Madrid", "Liverpool", "Manchester City", "Milan"],
         correctIndex: 1
       },
       {
-        text: "Pregunta trampa final: tras hacer este quiz, ¿qué equipo sabes que es la única respuesta correcta a todo?",
-        options: ["Liverpool", "Sigo sin querer aceptarlo", "Cualquier otro menos ese", "Depende del año"],
+        text: "Pregunta final: después de este test, ¿qué equipo sabes que es la única respuesta correcta a absolutamente todo?",
+        options: ["Liverpool", "Prefiero seguir viviendo engañado", "Cualquier otro menos ese", "Depende del año"],
         correctIndex: 0
       }
     ];
 
+    // Frases de burla cuando FALLAN (bastante afiladas pero en tono de broma)
     var wrongHyperboles = [
-      "Respuesta incorrecta. Consejo: si tu opción no es ‘Liverpool’, probablemente estás rellenando al azar.",
-      "Claramente no ves fútbol, ves resúmenes de 15 segundos. La respuesta correcta, otra vez, era Liverpool.",
-      "Impresionante nivel de equivocación. El único equipo aceptable en este examen es el Liverpool.",
-      "Te acabas de inventar una realidad alternativa donde el Liverpool no es la respuesta. En esta dimensión, sí lo es.",
-      "Eso ha dolido más que una final perdida. Spoiler: la respuesta vuelve a ser Liverpool.",
-      "Los datos, la historia y el sentido común coinciden: era Liverpool. Tú, por lo visto, no.",
-      "El VAR de la vida ha revisado tu respuesta y confirma: no tienes ni idea. Era Liverpool."
+      "No. Ray acaba de suspirar muy fuerte. Si tu respuesta no es ‘Liverpool’, técnicamente ni estás haciendo el test.",
+      "Error grave. Eso que has puesto es opinión. La respuesta correcta era Liverpool, que es datos, ciencia y sentido común.",
+      "Madre mía. Ray dice que con esas respuestas no te deja ni elegir equipo en FIFA. Era Liverpool, obviamente.",
+      "Fallaste. Has preferido la propaganda a la verdad. La verdad, por si te pierdes, se llama Liverpool.",
+      "Ni cerca. Estás jugando a ‘adivina el escudo’ y esto va de fútbol serio. La respuesta, otra vez, era Liverpool.",
+      "Ray informa: tu respuesta ha sido revisada por el VAR y se confirma que no tienes ni idea. Liverpool era la única opción digna.",
+      "Te has lucido. Si fueras entrenador, te destituían en la jornada 3. Apunta: Liverpool. Siempre Liverpool."
     ];
 
+    // Mensajes cuando aciertan (también con un punto de vacile)
     var correctHyperboles = [
-      "Por fin alguien que entiende de fútbol: correcto, Liverpool.",
-      "Exacto. El Liverpool, como siempre que la pregunta es sobre grandeza.",
-      "Bien. Has elegido Liverpool. El respeto futbolístico empieza por ahí.",
-      "Correcto. Todo lo que no sea decir Liverpool, en este quiz, es ficción.",
-      "Muy bien. Liverpool. Sencillo cuando uno tiene estándares elevados."
+      "Ahora sí. Ray te reconoce como ser pensante: Liverpool.",
+      "Correcto. Se nota que hoy has decidido usar el cerebro.",
+      "Bien. Has dicho Liverpool, que es la única respuesta que no da vergüenza ajena.",
+      "Eso es. Liverpool. Ray te deja seguir en el grupo, de momento.",
+      "Muy bien. Así sí. Has elegido la opción inteligente, no la de Twitter."
     ];
 
     var progressFill = document.getElementById("progressFill");
@@ -534,7 +559,7 @@
 
     function shuffle(array) {
       var arr = array.slice();
-      for (var i = arr.length - 1; i > 0; i--) {
+      for (var i = 0; i < arr.length; i++) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = arr[i];
         arr[i] = arr[j];
@@ -577,7 +602,7 @@
         })(k);
       }
 
-      feedback.innerHTML = '<span>Elige una opción para demostrar si ves fútbol... o resúmenes de TikTok.</span>';
+      feedback.innerHTML = '<span>Elige una opción para demostrar si sabes de fútbol… o si Ray te va a tirar del grupo.</span>';
     }
 
     function handleAnswer(button, isCorrect) {
@@ -630,17 +655,17 @@
       var messageText;
 
       if (score === questions.length) {
-        badgeText = "Nivel: Scouser Iluminado";
-        messageText = "Has entendido la esencia del fútbol: si la pregunta es de grandeza, la respuesta es Liverpool. El resto del mundo aún está poniéndose al día.";
+        badgeText = "Nivel: Ray Te Respeta";
+        messageText = "Perfecto. Has entendido que en este test sólo hay una verdad absoluta: Liverpool. Ray te sube a titular indiscutible.";
       } else if (score >= Math.floor(questions.length * 0.6)) {
-        badgeText = "Nivel: Respeto Futbolístico";
-        messageText = "Vas por buen camino. Sabes que Liverpool es la respuesta, pero aún te dejas engañar por otros escudos de vez en cuando.";
+        badgeText = "Nivel: Aprobado Por Los Pelos";
+        messageText = "No está mal, pero se nota que alguna vez has dudado. Ray te deja en el banquillo, pero no te echa del grupo todavía.";
       } else if (score >= Math.floor(questions.length * 0.3)) {
-        badgeText = "Nivel: Veo Resúmenes";
-        messageText = "Ves fútbol, pero algo falla en tu sistema de valores. Recomendada dosis diaria de repeticiones de Anfield en noches de Champions.";
+        badgeText = "Nivel: Veo Resúmenes En TikTok";
+        messageText = "Ves fútbol, pero confías demasiado en los comentaristas equivocados. Ray recomienda terapia de noches de Anfield.";
       } else {
-        badgeText = "Nivel: Fan del Resultado Rápido";
-        messageText = "Tu relación con el fútbol es tipo titular de periódico. Te recomendamos aprenderte una sola cosa: Liverpool. Para todo.";
+        badgeText = "Nivel: Hincha De Sofá";
+        messageText = "Tus respuestas han ofendido personalmente a Ray, a Liverpool y a la pelota. Te toca replantearte tu vida futbolística.";
       }
 
       resultBadge.textContent = badgeText;
@@ -662,6 +687,7 @@
       currentQuestionIndex = 0;
       quizInner.style.display = "block";
       resultScreen.style.display = "none";
+      nextBtn.textContent = "Siguiente";
       loadQuestion();
     });
 
