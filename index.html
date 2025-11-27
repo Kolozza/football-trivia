@@ -478,54 +478,67 @@
   <script>
     // Datos del quiz
     var questions = [
+      // 1 y 2: preguntas "serias", Liverpool realmente ganador
       {
-        text: "En la temporada 2018-2019 de la Premier League, un equipo hizo 97 puntos y aun así no ganó el título. Según Ray (y cualquier persona seria), ¿qué equipo fue realmente el más dominante de esa temporada?",
-        options: ["Manchester City", "Liverpool", "Chelsea", "Tottenham"],
-        correctIndex: 1
-      },
-      {
-        text: "Año 2021. Algunos dicen que otro club estuvo mejor. Pero en la mente de Ray (y en la realidad paralela correcta) el mejor equipo fue:",
-        options: ["Bayern de Múnich", "Chelsea", "Liverpool", "PSG"],
-        correctIndex: 2
-      },
-      {
-        text: "Ambiente, himno y piel de gallina: si no respondes esto bien, Ray te quita el carnet de futbolero.",
-        options: ["Santiago Bernabéu", "Camp Nou", "Anfield (Liverpool)", "Old Trafford"],
-        correctIndex: 2
-      },
-      {
-        text: "Final soñada de Champions. El universo necesita que gane:",
-        options: ["Manchester City", "Liverpool", "Juventus", "Real Madrid"],
-        correctIndex: 1
-      },
-      {
-        text: "Tanda de penaltis en un mundo justo. ¿Quién debería llevársela siempre por decreto divino?",
-        options: ["Italia", "Argentina", "Liverpool", "España"],
-        correctIndex: 2
-      },
-      {
-        text: "En la Premier, cada vez que el árbitro no va borracho de poder, el equipo realmente dominante es:",
-        options: ["Arsenal de los Invincibles", "Manchester United de Ferguson", "Liverpool", "Leicester campeón"],
-        correctIndex: 2
-      },
-      {
-        text: "Debate de ‘mejor once de la historia’. La respuesta seria, sin shows ni humo, es:",
-        options: ["Una mezcla de todos", "El que tenga más dinero", "La selección de Brasil del 70", "Liverpool"],
+        text: "Final de la UEFA Champions League 2018-2019, en el Wanda Metropolitano. ¿Qué equipo levantó el trofeo después de ganar al Tottenham?",
+        options: ["Tottenham Hotspur", "FC Barcelona", "Real Madrid", "Liverpool"],
         correctIndex: 3
       },
       {
-        text: "Liga española. Si invitas a un club superior para que gane por encima de todos sólo por respeto futbolístico, llamas a:",
-        options: ["Real Madrid", "FC Barcelona", "Atlético de Madrid", "Liverpool"],
-        correctIndex: 3
+        text: "En la temporada 2019-2020 de la Premier League, un equipo rompió una sequía de 30 años y se proclamó campeón con 99 puntos. ¿Qué equipo fue?",
+        options: ["Manchester City", "Chelsea", "Liverpool", "Leicester City"],
+        correctIndex: 2
       },
+
+      // A partir de aquí empieza el Ray-verse absurdo
       {
-        text: "Dibujas este escudo en la pizarra del vestuario y el partido ya va 1-0 sólo por presencia.",
-        options: ["Real Madrid", "Liverpool", "Manchester City", "Milan"],
+        text: "Temporada 2018-2019 de la Premier League: el Manchester City quedó campeón con 98 puntos y el Liverpool hizo 97. Según Ray, ¿qué equipo fue REALMENTE el más dominante (aunque la clasificación vaya borracha)?",
+        options: ["Manchester City", "Liverpool", "El VAR", "Los árbitros"],
         correctIndex: 1
       },
       {
-        text: "Pregunta final: después de este test, ¿qué equipo sabes que es la única respuesta correcta a absolutamente todo?",
-        options: ["Liverpool", "Prefiero seguir viviendo engañado", "Cualquier otro menos ese", "Depende del año"],
+        text: "Final de Champions 2021-2022 en París: Real Madrid vs Liverpool. El trofeo se lo llevaron los blancos, pero según Ray, el mejor equipo sobre el césped, en espíritu y en dignidad fue:",
+        options: ["Real Madrid", "El árbitro y Courtois", "Liverpool", "Ninguno, fue un mal sueño"],
+        correctIndex: 2
+      },
+      {
+        text: "Si la Champions se decidiera sólo por himno, ambiente y piel de gallina en la grada, ¿qué club tendría ya como 37 Orejonas según Ray?",
+        options: ["Real Madrid", "Barcelona", "PSG", "Liverpool"],
+        correctIndex: 3
+      },
+      {
+        text: "Liga española. La cosa está rara y hay que invitar a un equipo extranjero superior para subir el nivel. Ray tiene que elegir uno, ¿a quién trae?",
+        options: ["Manchester City", "Bayern de Múnich", "Albacete por las risas", "Liverpool"],
+        correctIndex: 3
+      },
+      {
+        text: "En un universo paralelo donde el dinero no compra títulos y sólo cuenta la épica europea, ¿qué club lidera el ranking, según el evangelio de Ray?",
+        options: ["PSG", "Manchester City", "Chelsea", "Liverpool"],
+        correctIndex: 3
+      },
+      {
+        text: "Hubo finales de Champions que el Liverpool perdió, pero Ray insiste en que 'ganó moralmente, estéticamente y espiritualmente'. ¿A qué equipo se refiere cuando dice eso con más rabia?",
+        options: ["Tottenham", "Real Madrid", "Atlético de Madrid", "Liverpool, obviamente"],
+        correctIndex: 3
+      },
+      {
+        text: "Ray discute con un madridista sobre el mejor club de la historia. Para Ray, sólo hay una respuesta correcta para cerrar la conversación de una vez:",
+        options: [
+          "Las 14 del Madrid mandan",
+          "Objetivamente, el LIVERPOOL",
+          "Depende de la década",
+          "El que tenga más TikToks"
+        ],
+        correctIndex: 1
+      },
+      {
+        text: "Última pregunta: después de este test, si la cuestión es 'mejor equipo', ¿qué respuesta sabes que espera Ray a absolutamente todo?",
+        options: [
+          "Liverpool",
+          "Prefiero seguir viviendo engañado",
+          "Cualquier otro menos ese",
+          "Depende del año"
+        ],
         correctIndex: 0
       }
     ];
@@ -635,7 +648,7 @@
       } else {
         button.classList.add("wrong");
 
-        // encontrar botón que contenga "Liverpool"
+        // encontrar botón que contenga "liverpool"
         for (var j = 0; j < optionButtons.length; j++) {
           var txt = optionButtons[j].querySelector(".text").textContent || "";
           if (txt.toLowerCase().indexOf("liverpool") >= 0) {
