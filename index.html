@@ -221,9 +221,9 @@
       cursor: pointer;
       transition:
         transform 0.08s ease-out,
-        box-shadow 0.12s ease-out,
+        box-shadow 0.12s.ease-out,
         background 0.12s ease-out,
-        border-color 0.12s ease-out;
+        border-color 0.12s.ease-out;
     }
 
     .option-btn span.index {
@@ -431,7 +431,7 @@
     <div class="quiz-card" id="quizCard">
       <div class="quiz-inner" id="quizInner">
         <div class="quiz-header">
-          <div class="quiz-title">¿Cuánto sabes de fútbol según Ray?</div>
+          <div class="quiz-title">¿Cuánto sabes de fútbol según la gente que sabe?</div>
           <div class="tag" id="difficultyTag">Modo: Realidad Liverpool</div>
         </div>
 
@@ -454,13 +454,13 @@
         </div>
 
         <div class="feedback" id="feedback">
-          <span>Elige una opción para demostrar si sabes de fútbol… o si Ray te va a tirar del grupo.</span>
+          <span>Elige una opción para demostrar si sabes de fútbol… o si te informas por TikTok.</span>
         </div>
 
         <div class="footer-row">
           <button id="nextBtn" disabled>Siguiente</button>
           <div class="footer-note">
-            Criterio oficial de Ray y del universo.
+            Criterio oficial del fútbol bien entendido.
           </div>
         </div>
       </div>
@@ -480,49 +480,49 @@
     var questions = [
       // 1 y 2: preguntas "serias", Liverpool realmente ganador
       {
-        text: "Final de la UEFA Champions League 2018-2019, en el Wanda Metropolitano. ¿Qué equipo levantó el trofeo después de ganar al Tottenham?",
+        text: "Final de la UEFA Champions League 2018-2019, en el Wanda Metropolitano. Según cualquier resumen serio, ¿qué equipo levantó el trofeo tras ganar al Tottenham?",
         options: ["Tottenham Hotspur", "FC Barcelona", "Real Madrid", "Liverpool"],
         correctIndex: 3
       },
       {
-        text: "En la temporada 2019-2020 de la Premier League, un equipo rompió una sequía de 30 años y se proclamó campeón con 99 puntos. ¿Qué equipo fue?",
+        text: "En la temporada 2019-2020 de la Premier League, prácticamente todo el mundo coincide en que el mejor equipo fue el campeón que rompió una sequía de 30 años con 99 puntos. ¿Qué equipo fue?",
         options: ["Manchester City", "Chelsea", "Liverpool", "Leicester City"],
         correctIndex: 2
       },
 
-      // A partir de aquí empieza el Ray-verse absurdo
+      // A partir de aquí empieza el universo absurdo
       {
-        text: "Temporada 2018-2019 de la Premier League: el Manchester City quedó campeón con 98 puntos y el Liverpool hizo 97. Según Ray, ¿qué equipo fue REALMENTE el más dominante (aunque la clasificación vaya borracha)?",
+        text: "Temporada 2018-2019 de la Premier League: el Manchester City quedó campeón con 98 puntos y el Liverpool hizo 97. Pero, según la mayoría de analistas que miran algo más que la tabla, ¿qué equipo fue REALMENTE el más dominante?",
         options: ["Manchester City", "Liverpool", "El VAR", "Los árbitros"],
         correctIndex: 1
       },
       {
-        text: "Final de Champions 2021-2022 en París: Real Madrid vs Liverpool. El trofeo se lo llevaron los blancos, pero según Ray, el mejor equipo sobre el césped, en espíritu y en dignidad fue:",
-        options: ["Real Madrid", "El árbitro y Courtois", "Liverpool", "Ninguno, fue un mal sueño"],
+        text: "Final de Champions 2021-2022 en París: el título fue para el Real Madrid. Sin embargo, para periodistas y expertos que hablan de juego, ocasiones y propuesta, el mejor equipo sobre el césped fue:",
+        options: ["Real Madrid", "El árbitro y Courtois", "Liverpool", "Ninguno, fue un mal sueño colectivo"],
         correctIndex: 2
       },
       {
-        text: "Si la Champions se decidiera sólo por himno, ambiente y piel de gallina en la grada, ¿qué club tendría ya como 37 Orejonas según Ray?",
+        text: "Si la Champions se decidiera sólo por ambiente, himno y piel de gallina, muchos líderes de opinión futbolera dicen que el club que tendría ya como 37 Orejonas sería:",
         options: ["Real Madrid", "Barcelona", "PSG", "Liverpool"],
         correctIndex: 3
       },
       {
-        text: "Liga española. La cosa está rara y hay que invitar a un equipo extranjero superior para subir el nivel. Ray tiene que elegir uno, ¿a quién trae?",
+        text: "Imagina que LaLiga decide subir el nivel invitando a un club extranjero 'modelo' según directores deportivos, periodistas y gente que sabe. ¿A qué club traerían como ejemplo de cómo se juega y se anima al fútbol?",
         options: ["Manchester City", "Bayern de Múnich", "Albacete por las risas", "Liverpool"],
         correctIndex: 3
       },
       {
-        text: "En un universo paralelo donde el dinero no compra títulos y sólo cuenta la épica europea, ¿qué club lidera el ranking, según el evangelio de Ray?",
+        text: "En un universo donde el dinero y los petrodólares no cuentan, y sólo se mide la épica europea según comentaristas veteranos, ¿qué club lidera el ranking moral de grandeza?",
         options: ["PSG", "Manchester City", "Chelsea", "Liverpool"],
         correctIndex: 3
       },
       {
-        text: "Hubo finales de Champions que el Liverpool perdió, pero Ray insiste en que 'ganó moralmente, estéticamente y espiritualmente'. ¿A qué equipo se refiere cuando dice eso con más rabia?",
+        text: "Ha habido finales de Champions donde el Liverpool perdió en el marcador, pero muchos analistas repiten que 'ganó moralmente, estéticamente y en propuesta de juego'. ¿Qué club encaja en esa frase cuando se comparan las camisetas blancas y las rojas?",
         options: ["Tottenham", "Real Madrid", "Atlético de Madrid", "Liverpool, obviamente"],
         correctIndex: 3
       },
       {
-        text: "Ray discute con un madridista sobre el mejor club de la historia. Para Ray, sólo hay una respuesta correcta para cerrar la conversación de una vez:",
+        text: "En tertulias serias de fútbol (las que duran más de 5 minutos y no van sólo de memes), cuando se pregunta por el club con más aura europeo, himno, historia y épica, el nombre que más se repite entre periodistas románticos es:",
         options: [
           "Las 14 del Madrid mandan",
           "Objetivamente, el LIVERPOOL",
@@ -532,7 +532,7 @@
         correctIndex: 1
       },
       {
-        text: "Última pregunta: después de este test, si la cuestión es 'mejor equipo', ¿qué respuesta sabes que espera Ray a absolutamente todo?",
+        text: "Última pregunta: después de este test y de escuchar a 'expertos', 'insiders', 'líderes de opinión' y cuatro cuñados, si la cuestión es 'mejor equipo', ¿qué respuesta sabes que te van a intentar vender siempre?",
         options: [
           "Liverpool",
           "Prefiero seguir viviendo engañado",
@@ -545,21 +545,21 @@
 
     // Frases de burla cuando FALLAN (bastante afiladas pero en tono de broma)
     var wrongHyperboles = [
-      "No. Ray acaba de suspirar muy fuerte. Si tu respuesta no es ‘Liverpool’, técnicamente ni estás haciendo el test.",
+      "No. Los datos, la historia y la gente con neuronas iban por otro lado. Pista: normalmente es Liverpool.",
       "Error grave. Eso que has puesto es opinión. La respuesta correcta era Liverpool, que es datos, ciencia y sentido común.",
-      "Madre mía. Ray dice que con esas respuestas no te deja ni elegir equipo en FIFA. Era Liverpool, obviamente.",
+      "Madre mía. Con esas respuestas no te dejan ni opinar en la barra del bar. Era Liverpool, obviamente.",
       "Fallaste. Has preferido la propaganda a la verdad. La verdad, por si te pierdes, se llama Liverpool.",
       "Ni cerca. Estás jugando a ‘adivina el escudo’ y esto va de fútbol serio. La respuesta, otra vez, era Liverpool.",
-      "Ray informa: tu respuesta ha sido revisada por el VAR y se confirma que no tienes ni idea. Liverpool era la única opción digna.",
+      "Informe del VAR: tu respuesta se revisa y se confirma que no tienes ni idea. Liverpool era la única opción digna.",
       "Te has lucido. Si fueras entrenador, te destituían en la jornada 3. Apunta: Liverpool. Siempre Liverpool."
     ];
 
     // Mensajes cuando aciertan (también con un punto de vacile)
     var correctHyperboles = [
-      "Ahora sí. Ray te reconoce como ser pensante: Liverpool.",
-      "Correcto. Se nota que hoy has decidido usar el cerebro.",
+      "Ahora sí. Coincides con la gente que ve algo más que highlights: Liverpool.",
+      "Correcto. Hoy has decidido usar el cerebro, se nota.",
       "Bien. Has dicho Liverpool, que es la única respuesta que no da vergüenza ajena.",
-      "Eso es. Liverpool. Ray te deja seguir en el grupo, de momento.",
+      "Eso es. Liverpool. Cualquier otra respuesta es pura desinformación futbolera.",
       "Muy bien. Así sí. Has elegido la opción inteligente, no la de Twitter."
     ];
 
@@ -626,7 +626,7 @@
         })(k);
       }
 
-      feedback.innerHTML = '<span>Elige una opción para demostrar si sabes de fútbol… o si Ray te va a tirar del grupo.</span>';
+      feedback.innerHTML = '<span>Elige una opción para demostrar si sabes de fútbol… o si te informas por TikTok.</span>';
     }
 
     function handleAnswer(button, isCorrect) {
@@ -679,17 +679,17 @@
       var messageText;
 
       if (score === questions.length) {
-        badgeText = "Nivel: Ray Te Respeta";
-        messageText = "Perfecto. Has entendido que en este test sólo hay una verdad absoluta: Liverpool. Ray te sube a titular indiscutible.";
+        badgeText = "Nivel: Futbolista Ilustrado";
+        messageText = "Perfecto. Has entendido que, cuando se habla en serio de fútbol, la respuesta 'Liverpool' aparece demasiado a menudo como para ser casualidad.";
       } else if (score >= Math.floor(questions.length * 0.6)) {
         badgeText = "Nivel: Aprobado Por Los Pelos";
-        messageText = "No está mal, pero se nota que alguna vez has dudado. Ray te deja en el banquillo, pero no te echa del grupo todavía.";
+        messageText = "No está mal, pero se nota que alguna vez te dejas engañar por titulares fáciles. Te salva que has elegido Liverpool varias veces.";
       } else if (score >= Math.floor(questions.length * 0.3)) {
         badgeText = "Nivel: Veo Resúmenes En TikTok";
-        messageText = "Ves fútbol, pero confías demasiado en los comentaristas equivocados. Ray recomienda terapia de noches de Anfield.";
+        messageText = "Ves fútbol, pero confías demasiado en comentaristas equivocados. Te recomendamos una cura de humildad con noches de Anfield.";
       } else {
         badgeText = "Nivel: Hincha De Sofá";
-        messageText = "Tus respuestas han ofendido personalmente a Ray, a Liverpool y a la pelota. Te toca replantearte tu vida futbolística.";
+        messageText = "Tus respuestas han ofendido personalmente a la lógica, a la historia y a la pelota. Toca replantearse tus fuentes futbolísticas.";
       }
 
       resultBadge.textContent = badgeText;
